@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { getAllProducts } from '../services/products';
 
 export const useProducts = () => {
@@ -6,7 +6,7 @@ export const useProducts = () => {
 
     React.useEffect(() => {
       getAllProducts ().then((response) => {
-        setProducts(response.data);
+        setProducts(response.data.products);
       }).catch((error) => {
           console.error(error);
       })
