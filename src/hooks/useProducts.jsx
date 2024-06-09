@@ -1,0 +1,16 @@
+import React from 'react'
+import { getAllProducts } from '../services/products';
+
+export const useProducts = () => {
+    const [products, setProducts] = React.useState([])
+
+    React.useEffect(() => {
+      getAllProducts ().then((response) => {
+        setProducts(response.data);
+      }).catch((error) => {
+          console.error(error);
+      })
+  }, []);
+
+  return { products };
+}

@@ -1,15 +1,16 @@
 import ButtonComponent from './components/Button/ButtonComponent';
 import NavBarComponent from './components/NavBarComponent/NavBarComponent';
 import ItemListContainerComponent from './components/ItemListContainerComponent/ItemListContainerComponent';
+import MainRouter from './routes/MainRouter';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   return (
   <>
-    <NavBarComponent/>
-    <ItemListContainerComponent greeting="Bienevenidos a Star Shop"/>
+    <MainRouter />
   </>
   )
 }
 
-export default App
+export default App;
