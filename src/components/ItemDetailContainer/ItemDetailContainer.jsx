@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ItemDetailContainer = ({product}) => {
+const ItemDetailContainer = ({ product }) => {
   return (
     <div>
-        <div style={{display: 'flex'}}>
+        <div style={{ display: "flex"}}>
         {product.images.map((image, index) => {
             return <img key={index} src={image} alt={product.title}  style={{width: 100, height: 100}}/>
         })}

@@ -11,7 +11,7 @@ export const useProductById = (id) => {
   .catch((error) => {
     console.error(error);
   })
-  }, []);
+  }, [id]);
   return { product }
 };
 
