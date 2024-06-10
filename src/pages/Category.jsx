@@ -8,7 +8,7 @@ const Category = () => {
 
   const {products} = useProductsByCategory(id)
   return (
-    <ItemListContainerComponent />
+    <ItemListContainerComponent products={products} />
   )
 }
 
