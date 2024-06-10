@@ -30,7 +30,7 @@ const NavBarComponent = () => {
           <Nav className="me-auto">
             <Nav.Link href="#home"><Link to="/" style={{color: 'white'}}>Home</Link></Nav.Link>
             <Nav.Link href="#link">Productos</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="Categorias" id="basic-nav-dropdown">
               {categories.map((category) => {
                 return (
                   <NavDropdown.Item key={category.slug}>
