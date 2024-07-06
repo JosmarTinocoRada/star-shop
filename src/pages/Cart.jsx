@@ -1,5 +1,7 @@
 import React from "react";
 import { CartContext } from "../context/CartContext";
+import { Button } from "react-bootstrap";
+import { collection, getFirestore, addDoc } from 'firebase/firestore'
 
 const Cart = () => {
   const { cart, removeFromCart, deleteFromCart } =
@@ -13,11 +15,36 @@ const Cart = () => {
     deleteFromCart(item);
   };
 
+  const createOrder = () => {
+    const items = cart.map(item =>(
+      {
+          id: item.id,
+          quantity: item.quantity
+      }
+    ));
+  
+    console.log(items)
+  
+    const order =  {
+      items: items,
+    }
+    const db = getFirestore();
+    const orderCollection = collection(db,"orders")
+
+    addDoc(orderCollection, order)
+    .then(() => {
+      console.log("Order added successfully");
+    })
+    .catch((error) => {
+      console.error("Error adding order: ", error);
+    });
+  };
+
   return (
     <div>
       <h1>Carrito de Compras</h1>
       {cart.length > 0 ? (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", flexDirection: 'column' }}>
           <div style={{ flex: 1, padding: "10px" }}>
             {cart.map((item, index) => (
               <div
@@ -47,6 +74,9 @@ const Cart = () => {
               </div>
             ))}
           </div>
+
+            <Button>Comprar</Button>
+
         </div>
       ) : (
         <p>Tu carrito está vacío</p>

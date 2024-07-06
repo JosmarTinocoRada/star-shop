@@ -1,6 +1,3 @@
-
-
-
 import MainRouter from './routes/MainRouter';
 import { CartProvider } from './context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
