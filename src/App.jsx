@@ -1,15 +1,16 @@
-import ButtonComponent from './components/Button/ButtonComponent';
-import NavBarComponent from './components/NavBarComponent/NavBarComponent';
-import ItemListContainerComponent from './components/ItemListContainerComponent/ItemListContainerComponent';
+
+
+
 import MainRouter from './routes/MainRouter';
+import { CartProvider } from './context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const App = () => {
   return (
-  <>
+  <CartProvider>
     <MainRouter />
-  </>
+  </CartProvider>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useProducts } from '../../hooks/useProducts';
+import { useCollectionItems} from '../../hooks/useCollectionItems';
 import './ItemListContainerComponent.css';
 import Card from 'react-bootstrap/Card';
 
